@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <readline/readline.h>
 
 #include "../h/ALLFUNC.h"
 #include "../h/struct.h"
@@ -17,9 +18,14 @@ detail* InputDataMenu(int *DataSize){
                 printf("Count of new Data - ?\n");
                 int Counter;
                 scanf("%d", &Counter);
-                return InputByConsole(Counter, DataSize);
+                return InputDataByConsole(Counter, DataSize);
                 break;
             case 2:
+                {
+                    char *file_name = NULL;
+                    file_name = readline("File name: ");
+                    return InputDataByFile(file_name, DataSize);
+                }
                 break;
             case 3:
                 break;

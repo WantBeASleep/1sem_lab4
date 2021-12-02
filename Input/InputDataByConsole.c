@@ -7,14 +7,13 @@
 #include "../h/struct.h"
 
 
-detail* InputByConsole(int Counter, int *DataSize){
+detail* InputDataByConsole(int Counter, int *DataSize){
     
     detail *localData = NULL;
-
+    *DataSize += Counter;
+    localData = (detail *)malloc(sizeof(detail) * Counter);
     for(int idx=0; idx<Counter; idx++){
-        (*DataSize)++;
-        printf("number data %d\n", *DataSize);
-        localData = (detail *)realloc(localData, sizeof(detail));
+        printf("number data %d\n", idx + 1);
         char *str = NULL;
         str = readline("Enter name of detail: ");
         localData[idx].name = (char *)malloc(strlen(str) * sizeof(char));
@@ -23,8 +22,5 @@ detail* InputByConsole(int Counter, int *DataSize){
         printf("Enter count of detail: ");
         scanf("%d", &(localData[idx].counter));
     }
-    printf("localdata[1].name = %s\n", localData[1].name);
-    printf("LOCALDATA OVERVIEW:\n");
-    OutputDataToConsole(localData, Counter);
     return localData;
 }

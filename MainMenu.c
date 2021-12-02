@@ -5,7 +5,7 @@
 
 #include "h/struct.h"
 #include "h/ALLFUNC.h"
-
+#include "h/lib_help.h"
 
 int main(){
     detail *Data = NULL;
@@ -26,9 +26,17 @@ int main(){
                     int count = DataSize;
                     newData = InputDataMenu(&DataSize);
                     count = DataSize - count;
+
                     printf("Test info:\ncount - %d\ndatasize: %d\nnewData - %p\n", count, DataSize, newData);
                     int idx = 0, j = 0;
-                    Data = (detail *)realloc(Data, sizeof(detail) * count);
+
+                    detail *tmpData = NULL;
+                    tmpData = Data;
+                    Data = strctncpy(tmpData, DataSize, count);
+                    free(tmpData);
+
+//                    Data = realloc(Data, sizeof(detail) * count);
+
                     for (idx = DataSize-count; idx<DataSize; idx++){
                         Data[idx].name = (char *)malloc(strlen(newData[j].name) * sizeof(char));
                         strcpy(Data[idx].name, newData[j].name);
