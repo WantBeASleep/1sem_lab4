@@ -1,5 +1,5 @@
 lab4 : MainMenu.o InputDataMenu.o InputDataByConsole.o OutputDataMenu.o OutputDataToConsole.o lib_code.o InputDataByFile.o
-	gcc -o lab4 MainMenu.o InputDataMenu.o InputDataByConsole.o OutputDataMenu.o OutputDataToConsole.o lib_code.o -lreadline
+	gcc -o lab4 MainMenu.o InputDataMenu.o InputDataByConsole.o OutputDataMenu.o OutputDataToConsole.o lib_code.o InputDataByFile.o -lreadline
 	rm *.o
 
 MainMenu.o : MainMenu.c 

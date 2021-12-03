@@ -38,6 +38,7 @@ int main(){
 //                    Data = realloc(Data, sizeof(detail) * count);
 
                     for (idx = DataSize-count; idx<DataSize; idx++){
+                        strcpy(Data[idx].id, newData[j].id);
                         Data[idx].name = (char *)malloc(strlen(newData[j].name) * sizeof(char));
                         strcpy(Data[idx].name, newData[j].name);
                         Data[idx].counter = newData[j].counter;

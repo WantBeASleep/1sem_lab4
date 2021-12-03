@@ -1,0 +1,15 @@
+Hash001
+TomatoPaste
+13
+Hash002
+Mayo
+12
+Hash003
+Mustard
+16
+Hash004
+StrawberryJam
+5
+Hash005
+AppleJam
+7
