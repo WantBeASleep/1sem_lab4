@@ -9,6 +9,7 @@ detail* InputDataByConsole(int, int *);
 detail* InputDataByFile(char *, int *);
 void OutputDataMenu(detail *, int);
 void OutputDataToConsole(detail *, int);
+void OutputDataToFile(detail *, char *, int);
 
 
 #endif

@@ -37,6 +37,5 @@ detail* InputDataByFile(char *file_name, int *DataSize){
         idx++;
     }
     fclose(file);
-    OutputDataToConsole(localData, idx);
     return localData;
 }

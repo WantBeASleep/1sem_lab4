@@ -1,5 +1,5 @@
-lab4 : MainMenu.o InputDataMenu.o InputDataByConsole.o OutputDataMenu.o OutputDataToConsole.o lib_code.o InputDataByFile.o
-	gcc -o lab4 MainMenu.o InputDataMenu.o InputDataByConsole.o OutputDataMenu.o OutputDataToConsole.o lib_code.o InputDataByFile.o -lreadline
+lab4 : MainMenu.o InputDataMenu.o InputDataByConsole.o OutputDataMenu.o OutputDataToConsole.o lib_code.o InputDataByFile.o OutputDataToFile.o
+	gcc -o lab4 MainMenu.o InputDataMenu.o InputDataByConsole.o OutputDataMenu.o OutputDataToConsole.o lib_code.o InputDataByFile.o OutputDataToFile.o -lreadline
 	rm *.o
 
 MainMenu.o : MainMenu.c 
@@ -19,6 +19,9 @@ OutputDataMenu.o : Output/OutputDataMenu.c
 
 OutputDataToConsole.o : Output/OutputDataToConsole.o
 	gcc -c Output/OutputDataToConsole.c
+
+OutputDataToFile.o : Output/OutputDataToFile.c
+	gcc -c Output/OutputDataToFile.c
 
 lib_code.o : lib_help/lib_code.c
 	gcc -c lib_help/lib_code.c

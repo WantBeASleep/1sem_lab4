@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <readline/readline.h>
 
 #include "../h/struct.h"
 #include "../h/ALLFUNC.h"
@@ -17,6 +18,12 @@ void OutputDataMenu(detail *Data, int DataSize){
                 OutputDataToConsole(Data, DataSize);
                 break;
             case 2:
+                {
+                    char *file_name = NULL;
+                    file_name = readline("File name: ");
+                    OutputDataToFile(Data, file_name, DataSize);
+                    return;
+                }
                 break;
             case 3:
                 return;
