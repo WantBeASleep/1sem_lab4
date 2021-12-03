@@ -1,6 +1,8 @@
-lab4 : MainMenu.o InputDataMenu.o InputDataByConsole.o OutputDataMenu.o OutputDataToConsole.o lib_code.o InputDataByFile.o OutputDataToFile.o
-	gcc -o lab4 MainMenu.o InputDataMenu.o InputDataByConsole.o OutputDataMenu.o OutputDataToConsole.o lib_code.o InputDataByFile.o OutputDataToFile.o -lreadline
+lab4 : MainMenu.o InputDataMenu.o InputDataByConsole.o OutputDataMenu.o OutputDataToConsole.o lib_code.o InputDataByFile.o OutputDataToFile.o addTech.o freestrct.o
+	gcc -o lab4 MainMenu.o InputDataMenu.o InputDataByConsole.o OutputDataMenu.o OutputDataToConsole.o lib_code.o InputDataByFile.o OutputDataToFile.o addTech.o freestrct.o -lreadline
+	rm Output/OutputDataToConsole.o
 	rm *.o
+	clear
 
 MainMenu.o : MainMenu.c 
 	gcc -c MainMenu.c 
@@ -26,5 +28,13 @@ OutputDataToFile.o : Output/OutputDataToFile.c
 lib_code.o : lib_help/lib_code.c
 	gcc -c lib_help/lib_code.c
 
+addTech.o : lib_help/addTech.c
+	gcc -c lib_help/addTech.c
+
+freestrct.o : lib_help/freestrct.c
+	gcc -c lib_help/freestrct.c
+
 clear : 
-	rm lab4 *.o
+	rm output1.txt
+	rm output1TECH.txt
+	rm lab4

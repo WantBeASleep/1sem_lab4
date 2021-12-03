@@ -22,6 +22,7 @@ void OutputDataMenu(detail *Data, int DataSize){
                     char *file_name = NULL;
                     file_name = readline("File name: ");
                     OutputDataToFile(Data, file_name, DataSize);
+                    free(file_name);
                     return;
                 }
                 break;

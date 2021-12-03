@@ -12,6 +12,7 @@ detail* strctncpy(detail *oldData, int DataSize, int delta){
         strcpy(newData[idx].id, oldData[idx].id);
         newData[idx].name = (char *)malloc(strlen(oldData[idx].name) * sizeof(char));
         strcpy(newData[idx].name, oldData[idx].name);
+        free(oldData[idx].name);
         newData[idx].counter = oldData[idx].counter;
     }
     return newData;

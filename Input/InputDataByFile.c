@@ -16,18 +16,17 @@ detail* InputDataByFile(char *file_name, int *DataSize){
     char str[100];
     char hash[8];
     int counter;
-    
     detail *localData = NULL;
+
     while (fscanf(file, "%s", hash) != EOF) {
         (*DataSize)++;
-//        printf("File_READ tech info:\nidx - %d\nstr - %s\nDataSize - %d\n", idx, str, *DataSize);
 
         detail *tmpDate;
         tmpDate = localData;
         localData = strctncpy(tmpDate, idx+1, 1);
+        freestrct(tmpDate, idx);
         free(tmpDate);
 
-//        localData = (detail *)realloc(localData, sizeof(detail));
         strcpy(localData[idx].id, hash);
         fscanf(file, "%s", str);
         localData[idx].name = (char *)malloc(strlen(str) * sizeof(char));

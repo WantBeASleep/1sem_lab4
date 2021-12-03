@@ -24,7 +24,10 @@ detail* InputDataMenu(int *DataSize){
                 {
                     char *file_name = NULL;
                     file_name = readline("File name: ");
-                    return InputDataByFile(file_name, DataSize);
+                    detail *res = NULL;
+                    res = InputDataByFile(file_name, DataSize);
+                    free(file_name);
+                    return res;
                 }
                 break;
             case 3:

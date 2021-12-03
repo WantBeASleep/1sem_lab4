@@ -17,8 +17,6 @@ int main(){
         scanf("%d", &choise);
         printf("\n");
 
-        //
-
         switch (choise){
             case 1:
                 {
@@ -33,9 +31,8 @@ int main(){
                     detail *tmpData = NULL;
                     tmpData = Data;
                     Data = strctncpy(tmpData, DataSize, count);
+                    freestrct(tmpData, DataSize-count);
                     free(tmpData);
-
-//                    Data = realloc(Data, sizeof(detail) * count);
 
                     for (idx = DataSize-count; idx<DataSize; idx++){
                         strcpy(Data[idx].id, newData[j].id);
@@ -44,6 +41,7 @@ int main(){
                         Data[idx].counter = newData[j].counter;
                         j++;
                     }
+                    freestrct(newData, count);
                     free(newData);
                 }
                 break;
@@ -56,6 +54,7 @@ int main(){
                 break;
             case 5:
                 exit(0);
+                free(Data);
                 break;
         }
     }
